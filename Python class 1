@@ -1,0 +1,370 @@
+Sample Python codes for different purposes
+######## DRAWS A shape outward spiral
+from turtle import *
+
+for i in range(1, 50):
+    forward(5*i) # Multiply value of i by 5
+    left(90)
+
+bye()
+##### REVERSE SPIRAL
+
+from turtle import *
+
+for i in range(100, 0, -5):
+    forward(i)
+    left(90)
+#To use the negative step size properly, the start value should always be greater than the stop value.
+
+### CIRCLE
+
+from turtle import *
+
+width(2)
+
+def circle():
+    penup()
+    forward(200)
+    pendown()
+    left(90)
+    for i in range(60):
+        forward(6) # Controls size
+        left(6)
+    right(90)
+    penup()
+    back(200)
+    pendown()
+
+circle()
+# To draw a circle of any size, we can use a function argument:
+# Draws a circle with size of 10
+circle(10) # Argument size replaced with 10 everywhere
+
+# Draws a circle with size of 20
+circle(20) # Argument size replaced with 20 everywhere
+
+# def circle(radius): # here radius is a parameter
+# circle(20) # here 20 is an argument
+
+
+####CENTERED TURTLE
+
+from turtle import *
+
+width(2)
+
+def circle(size):
+    penup()
+    forward(size*30/3.14) # Updated line
+    pendown()
+    left(90)
+    for i in range(60):
+        forward(size)
+        left(6)
+    right(90)
+    penup()
+    back(size*30/3.14) # Updated line
+    pendown()
+
+# Drawing centered circles 
+circle(10)
+circle(20)
+
+bye()
+
+### INPUT
+nam = input("who is this?")
+print("Hello,", nam)
+
+
+##### ELEVATOR CONVERTER
+inp = input('What european floor is this?')
+theUS = int(inp) + 1
+print('The US floor is', theUS)
+
+#### IF ELIF ELSE
+x = 100
+if x < 10:
+    print("x is greater than 12")
+elif x < 20:
+  print("x is greater than 2")
+elif x < 30:
+  print("x is greater than 22")
+elif x < 40:
+  print("x is greater than 222")
+else:
+  print("x is less than or equal to 2")
+print('All Done')
+
+#### TRY \\\ EXCEPT
+
+astr = ('Hello Bob')
+try:
+  istr = int(astr)
+except:
+  istr = 'Sorun var'
+print ('first', istr)
+astra = 'deneme hata'
+try:
+  istra = int(astra)
+  print('çalıştı')
+except:
+  istra = 'sorun var'
+print ('second', istra)
+
+---------
+rawstr = input('Enter a number:')
+try:
+  ival = int(rawstr)
+except:
+  ival = -1
+# I manage the code here by the value of ival
+if ival > 0:
+  print('Nice work')
+else:
+  print('Not a number')
+
+##### FUNCTIONS
+def greet(lang):
+  if lang == 'es':
+    print('Hola')
+  elif lang == 'fr':
+    print('Bonjour')
+  else:
+    print('Hello')
+greet('es')
+
+##### WHILE LOOP
+
+n = 5 
+while n > 0:
+    print(n)
+    n = n - 1
+print("Blastoff!")
+### LOOD DOING NOTHING
+n = 0
+while n > 0:
+    print(n)
+    n = n - 1
+print("Blastoff!")
+
+### INFINITE LOOP
+n = 10
+while n > 0:
+    print('H')
+print("Blastoff!")
+
+##### BREAK AND CONTINUE
+while True:
+    line = input('> ')
+    if line == 'done':
+        break
+    print(line)
+print('Done')
+
+##### LOOP IDIOMS
+
+print('Before')
+for blebla in [3, 56, 78, 9, 998, 52]:
+  print(blebla)
+print('After')
+
+##### LARGEST SO FAR 
+largest_so_far = -1
+print('before', largest_so_far)
+for the_num in [2, 54, 34, 23, 74, 456]:
+  if the_num > largest_so_far:
+    largest_so_far = the_num
+  print(largest_so_far, the_num)
+print(largest_so_far)
+
+#### SMALLEST NUMBER IN A LOOP
+
+number = 50 
+print('before', number)
+for the_num in [97, 160, 45, 30, 54, 34, 23, 74, 456, 2, 45, ]:
+  if the_num < number:
+    number = the_num
+  print(number, the_num)
+print(number)
+
+None Indicates emptiness, is stronger than =
+just for none or true false
+
+### A BETTER SOLUTION WITH NONE
+
+smallest = None
+print('Before')
+for value in [9, 45, 43, 98, 23, 5, 3, 1]:
+    if smallest is None:
+      smallest = value
+    elif value < smallest:
+      smallest = value
+    print(smallest, value)
+print('After')
+print(smallest)
+
+
+
+#### COUNTING IN A LOOP
+count = 0
+print('Before', count)
+for thing in [2, 45, 34, 56, 34, 234, 1]:
+  count = count + 1
+  print(count, thing)
+print('After', count)
+
+#### AVERAGE IN A LOOP
+total = 0
+count = 0
+print('Before', total)
+for thing in [2, 45, 34, 56, 34, 234, 1]:
+  total = total + thing
+  count = count +1
+  print(count, thing, total)
+avg = total / count
+print('After', total)
+print(avg)
+
+####FILTERING A LOOP
+print('Before')
+for thing in [2, 45, 34, 56, 34, 234, 1]:
+ if thing > 20:
+  print("Large number", thing)
+print("After")
+
+
+### LOOKING FOR A VALUE IN A LOOP
+found = False
+print ('Before', found)
+for number in [2, 45, 34, 56, 34, 3, 234, 1]:
+ if number == 3:
+   found = True
+ print (found, number)
+
+print("Yes there is", found)
+
+#### LOOKING FOR A VALUE IN A LOOP 2
+
+found = False
+for number in [2, 45, 34, 56, 34, 3, 234, 1]:
+ if number == 3:
+   found = True
+   print(found)
+
+#### STRINGS
+
+#### LOOPING THROUGH STRINGS
+
+fruit = 'banana'
+index = 0
+while index < len(fruit):
+  letter = fruit[index]
+  print(index, letter)
+  index = index + 1
+
+
+#### FOR 
+fruit = 'banana'
+for let in fruit:
+  print(let)
+
+###### COUNT LETTERS
+
+word = 'banana'
+count = 0
+for letter in word:
+  if letter == 'a':
+    count = count + 1
+print (count)
+
+#### SSLICING
+
+s = 'monty python'
+print(s[0:4])
+print(s[6:7])
+print(s[:6])
+print(s[7:])
+print(s[::2])
+
+##### STRING LIBRARY
+greet = 'HELLO BOB'
+zap = greet.lower()
+print(zap)
+
+stuff = 'Hello world'
+print(type(stuff))
+print(dir(stuff))
+print(stuff.upper())
+print(stuff.lower())
+print(stuff.title())
+print(stuff.capitalize())
+print(stuff.swapcase())
+print(stuff.isupper())
+print(stuff.islower())
+print(stuff.istitle())
+print(stuff.isspace())
+print(stuff.isalpha())
+print(stuff.isdigit())
+print(stuff.isalnum())
+print(stuff.isdecimal())
+print(stuff.isidentifier())
+print(stuff.isprintable())
+print(stuff.isnumeric())
+
+
+### LOCATING 
+
+fruit = 'banana'
+print(fruit.find('na'))
+pos = fruit.find('na')
+print (pos)
+aa = fruit.find('za')
+print (aa)
+
+
+#### SEARCH AND PARSE
+
+data = 'From: A Place for Mom <donotreply@aplaceformom.com> Date: Thu, Oct 26, 2023 at 8:00 AM'
+atpos = data.find('@')
+print(atpos)
+print(data[atpos:])
+sppos = data.find(' ', atpos)
+print(sppos)
+host = data[atpos+1:sppos]
+print(host)
+
+
+#### REPLACE
+greet = ' Hello Bob'
+nstr = greet.replace('Bob', 'Jane')
+print(greet)
+print(nstr)
+
+### SPACE STRIP
+greet = '     Hello Bob'
+print(greet)
+print(greet.lstrip())
+
+greet1 = 'Hello Bob      '
+print(greet1)
+print(greet1.rstrip())
+
+#### STARTSWITH
+
+lin = 'Hello Bob'
+print(lin.startswith('H'))
+
+####### READING A FILE ####
+
+omer = open('pythondeneme.txt')
+for line in omer:
+    print(line)
+
+#### LINE COUNT IN A FILE ####
+omer = open('pythondeneme.txt')
+count = 0
+for line in omer:
+    print(line)
+    count = count + 1
+print('Line count:', count)
