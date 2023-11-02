@@ -11,3 +11,51 @@ for line in omer:
     print(line)
     count = count + 1
 print('Line count:', count)
+
+####### COUNTING AND PARSING ####
+omer = open('pythondeneme.txt')
+inp = omer.read()
+print(len(inp))
+print(inp[:100])
+
+##### SEARCH FOR A LINE STARTING WIYTH A WORD ####
+omer = open('pythondeneme.txt')
+for line in omer:
+    if line.startswith('From'):
+        print(line)
+
+##### INPUT FILE NAME
+
+fname = input('Enter the file name: ')
+fhand = open(fname)
+for line in fhand:
+    if not 'from' in line:
+        continue
+    print(line)
+
+####### COUNTING WORDS #######
+fhand = open('pythondeneme.txt')
+countprice = 0
+countpricing = 0
+for line in fhand:
+    if 'price' in line:
+       countprice = countprice + 1
+    elif 'pricing' in line:
+        countpricing = countpricing + 1
+print('number of word price in the file is : ', countprice)
+print('number of word pricing in the file is : ',countpricing)
+
+
+#### DEALING WITH A BAD FILE NAME #####
+fname = input('Enter the file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('file name cannot be opened:')
+    quit()
+    
+for line in fhand:
+    if not 'from' in line:
+        continue
+    print(line)
+    
