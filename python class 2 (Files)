@@ -1,0 +1,13 @@
+####### READING A FILE ####
+
+omer = open('pythondeneme.txt')
+for line in omer:
+    print(line)
+
+#### LINE COUNT IN A FILE ####
+omer = open('pythondeneme.txt')
+count = 0
+for line in omer:
+    print(line)
+    count = count + 1
+print('Line count:', count)
