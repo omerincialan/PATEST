@@ -1,1 +1,60 @@
+##### DEFINING FUNCTIONS SAMPLES
+### 1
+price = 10
+tax_rate = .2
+
+def AddTax(price, rate):
+    tax = price * tax_rate
+    Total = price + tax
+    return Total, tax;
+
+
+print(AddTax(price, tax_rate))
+
+#### 2
+
+def CubeVolum(sidelength):
+    volume = sidelength ** 3
+    return volume
+
+result1 = CubeVolum(3)
+print('A cube with side length 3 has volume:', result1)
+
+#### 3
+def addtxx(price, rate):
+    total = price + price * rate
+    tax = price * rate
+    total2 = total * 5
+    if total > 15:
+        return total, tax, rate
+    else:
+        return total2
+
+
+etiket = addtxx(10,.1)
+print(etiket)
+
+#### 4 NO RETURN VALUE
+def boxString(contents) :
+    n = len(contents) 
+    print("-" * (n + 2))
+    print("!" + contents + "!")
+    print("-" * (n + 2))
+
+boxString('h')
+
+
+#### 5 READINTUPTO
+
+def readIntUpTo(high) :
+    value = int(input("Enter a value between 0 and " + str(high) + ": "))
+    while value < 0 or value > high :
+        print("Error: value out of range.")
+    else:
+        value = int(input("Enter a value between 0 and " + str(high) + ": "))
+    
+    return value
+
+readIntUpTo(5)
+
 
