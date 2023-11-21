@@ -1,0 +1,115 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov 21 13:10:27 2023
+
+@author: omerincialan
+"""
+
+# Hello my name is Omer Incialan. I am writing a program that defines a class
+# called 'MultipleString'. This class has 3 instance attriubutes (string1, 
+# string2 and string3) and class constraints for min and max lenght of strings.
+# This class has a default constructor ensuring string members meet the length 
+# requirements. The program creates four instances of the class, displays their
+# initial state, mutates some members, performs explicit mutator tests, and 
+# demonstrates accessor calls.
+
+# This is the line we create the class
+class MultipleString:
+  
+    # We are defining length constraints here
+    MIN_LEN = 1
+    MAX_LEN = 50
+    DEFAULT_STRING = "(undefined) "
+
+    # Here we are presenting Constructor method to be used as default method
+    def __init__(self, string1=DEFAULT_STRING, string2=DEFAULT_STRING, string3=DEFAULT_STRING):
+        self.set_string1(string1)
+        self.set_string2(string2)
+        self.set_string3(string3)
+
+    # Mutator methods where I used the 'set' expression for assigning or changing
+    # attributes
+    def set_string1(self, new_string):
+        if self.valid_string(new_string):
+            self.string1 = new_string
+            return True
+        else:
+            return False
+
+    def set_string2(self, new_string2):
+        if self.valid_string(new_string2):
+            self.string2 = new_string2
+            return True
+        else:
+            return False
+
+    def set_string3(self, new_string3):
+        if self.valid_string(new_string3):
+            self.string3 = new_string3
+            return True
+        else:
+            return False
+
+    # Accessor ("get") methods to access the values assigned to each attribute
+    def get_string1(self):
+        return self.string1
+
+    def get_string2(self):
+        return self.string2
+
+    def get_string3(self):
+        return self.string3
+
+    # Helper method helps us to control length requirement being met
+    def valid_string(self, the_str):
+        return self.MIN_LEN <= len(the_str) <= self.MAX_LEN
+
+    # String representation of the object
+    def to_string(self):
+        return f"String1: {self.string1}, String2: {self.string2}, String3: {self.string3}"
+
+#### This is main part of the program where we perform the operations to check
+# if class carries out the object instantiation as intended, methods perform 
+# controls, mutations, access and manipulation asked in the assignment, 
+
+# Create 4 MultipleString objects
+multiple_string_num_1 = MultipleString()
+multiple_string_num_2 = MultipleString("Hello", "World", "!")
+multiple_string_num_3 = MultipleString("Python", "Programming", "Language")
+multiple_string_num_4 = MultipleString("Short", "LongLongLongLongLongLong", "Medium")
+
+# Display all objects after instantiation
+print("Objects after instantiation:")
+print(multiple_string_num_1.to_string())
+print(multiple_string_num_2.to_string())
+print(multiple_string_num_3.to_string())
+print(multiple_string_num_4.to_string())
+
+# Mutate members of every object
+multiple_string_num_1.set_string1("NewString1")
+multiple_string_num_2.set_string2("NewString2")
+multiple_string_num_3.set_string3("NewString3")
+multiple_string_num_4.set_string1("NewString4")
+
+# Display all objects a second time
+print("\nObjects after mutation:")
+print(multiple_string_num_1.to_string())
+print(multiple_string_num_2.to_string())
+print(multiple_string_num_3.to_string())
+print(multiple_string_num_4.to_string())
+
+# Explicit mutator tests
+if multiple_string_num_1.set_string2("ValidString"):
+    print("\nMutator test 1: Successful")
+else:
+    print("\nMutator test 1: Failed")
+
+if multiple_string_num_2.set_string3("TooLongStringForValidation"):
+    print("Mutator test 2: Successful")
+else:
+    print("Mutator test 2: Failed")
+
+# Accessor tests
+print(f"\nAccessor test 1: {multiple_string_num_3.get_string1()}")
+print(f"Accessor test 2: {multiple_string_num_4.get_string3()}")
