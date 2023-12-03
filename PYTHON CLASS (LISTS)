@@ -367,6 +367,196 @@ print(d1, d2)
 
 
 
+### LISTS CONTD
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov 25 15:05:12 2023
+
+@author: omerincialan
+"""
+
+# EMPTY LIST
+friends = []
+
+# APPENDING
+friends.append("Omer")
+
+friends = ["Harry", "Omer", "Cindy", "Emily", "Bob", "Cari","Bill"]
+
+print(friends)
+
+
+# INSERTING AN ELEMENT
+friends.insert(3, "Cheddar")
+
+# REMOVING FROM LIST
+friends.pop(2)
+print(friends)
+
+# FINDING AN ELEMENT
+
+if "Cindy" in friends :
+    print("She's a friend")
+    
+print(friends.index("Bob"))
+
+
+# CONCATENATION
+myFriends = ["Fritz", "Cindy"]
+yourFriends = ["Lee", "Pat", "Phuong"]
+
+ourfriends = myFriends + yourFriends
+print(ourfriends)
+
+# EQUALITY - SUM - MIN - MAX
+
+print([1, 4, 9] == [1, 4, 9]) 
+print([1, 4, 9 ] == [4, 1, 9])
+
+print(sum([1, 4, 9, 16]))
+print(max([1, 16, 9, 4]))
+print(min("Fred", "Ann", "Sue"))  
+
+values = [1, 16, 9, 4]
+values.sort()
+print(values.sort())
+
+## SLICING A LIST
+temperatures = [18, 21, 24, 33, 39, 40, 39, 36, 30, 22, 18]
+thirdQuarter = temperatures[6 : 9]
+
+#### COMMON LIST ALGORITHMS
+
+## 1 FILLING A LIST
+
+values = []
+for i in range(10) :
+    a = values.append(i * i)
+    print(values)
+    
+## 2 COMBINING ELEMENTS
+
+# result = ""
+# for element in values :
+#     result = result + element
+
+# for i in range(len(friends)) :
+#     if i > 0 :
+#         friends = result + ", "
+#         friends = result + friends[i]
+
+## 3 SEPARATING VALUES
+
+for i in range(len(values)) :
+    if i > 0 :
+            print(" | ", end="")
+            print(values[i], end="")
+            print()
+
+## 4 MIN - MAX
+largest = values[0]
+for i in range(1, len(values)) :
+    if values[i] > largest :
+        largest = values[i]
+        
+        
+## 5 LINEAR SEARCH
+
+limit = 100
+pos = 0
+found = False
+while pos < len(values) and not found :
+    if values[pos] > limit :
+        found = True
+    else :
+        pos = pos + 1
+if found :
+    print("Found at position:", pos)
+else :
+    print("Not found")
+    
+    
+### 6 COLLECTING  AND COUNTING ALL MATCHES
+r = range(100)
+limit = 100
+result1 = []
+counter = 0
+for elements in r :
+    if (elements > 60) :
+        result1.append(elements)
+        print(result1)
+        counter += 1
+        print(counter)
+print(counter)
+print(result1)
+
+### 7 REMOVE MATCHES
+
+# Initial list of friends
+friends = ["Harry", "Omer", "Cindy", "Emily", "Bob", "Cari", "Bill"]
+
+# Index variable for while loop
+index = 0
+
+# Use a while loop to remove members with names longer than 5 characters
+while index < len(friends):
+    if len(friends[index]) > 5:
+        del friends[index]
+    else:
+        index += 1
+
+# Print the modified list of friends
+print(friends)
+
+# Initial list of friends
+friends = ["Harry", "Omer", "Cindy", "Emily", "Bob", "Cari", "Bill"]
+
+# Remove members with names longer than 5 characters
+filtered_friends = [friend for friend in friends if len(friend) <= 5]
+
+# Print the filtered list of friends
+print(filtered_friends)
+
+
+a  = result1
+index = 0
+while index < len(result1):
+    if index in result1 > 90:
+        del result1[index]
+    else:
+        index += 1
+print(result1)
+
+
+# Initial list of numbers from 0 to 100
+numbers = result1
+
+# Index variable for while loop
+index = 0
+
+# Use a while loop to remove numbers greater than 90
+while index < len(numbers):
+    if numbers[index] > 90:
+        del numbers[index]
+    else:
+        index += 1
+
+# Print the modified list of numbers
+print(numbers)
+
+
+## USING LIST WITH FUNCTIONS
+
+def sum(result1) :
+    total = 0
+    for element in result1 :
+        total = total + element
+    return total
+
+sum(result1)
+
+
 
 
 
