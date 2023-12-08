@@ -5,7 +5,7 @@
 
 def main() :
    print("Volume:", pyramidVolume(9, 10))
-   print("Expected: 300")
+   print("Expected: 3000")
    print("Volume:", pyramidVolume(0, 10))
    print("Expected: 0")
 
