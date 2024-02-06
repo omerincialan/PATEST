@@ -10,7 +10,7 @@
 
 # Defining and controlling minimum and maximum number of characters for input
 MIN_STR_LEN = 6
-MAX_STR_LEN = 500
+MAX_STR_LEN = 501
 
 
 # Defining the input functions
